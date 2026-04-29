@@ -23,7 +23,7 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
       }}
     >
       {pokemon.map((pokemon) => (
-        <Link key={pokemon.name} href={"/screens/details"}>
+        <Link key={pokemon.name} href={`/screens/details?name=${pokemon.name}`}>
           <LinearGradient
             colors={getGradientColors(pokemon.mainType, pokemon.subType)}
             start={{ x: 0, y: 0 }}

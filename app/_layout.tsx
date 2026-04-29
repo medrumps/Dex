@@ -19,6 +19,10 @@ export default function RootLayout() {
           headerStyle: { backgroundColor: "#e7e7e7" },
           headerTitleStyle: { color: "#333", fontSize: 24 },
           headerTitleAlign: "center",
+          headerBackButtonDisplayMode: "minimal",
+          presentation: "formSheet",
+          sheetAllowedDetents: [0.75, 1],
+          sheetGrabberVisible: true,
         }}
       />
     </Stack>
