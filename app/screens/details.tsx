@@ -2,7 +2,11 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useLocalSearchParams } from "expo-router";
 import { Text } from "react-native";
 import { pokemonCache } from "../../src/cache";
-import { getGradientColors } from "../../src/utils/helpers";
+import { styles } from "../../src/styles/estilos";
+import {
+  capitalizeFirstLetter,
+  getGradientColors,
+} from "../../src/utils/helpers";
 
 export default function Details() {
   const params = useLocalSearchParams();
@@ -17,7 +21,9 @@ export default function Details() {
       colors={getGradientColors(pokemon.mainType, pokemon.subType)}
       style={{ flex: 1 }}
     >
-      <Text>{pokemon.name}</Text>
+      <Text style={styles.pokemonName}>
+        {capitalizeFirstLetter(pokemon.name)}
+      </Text>
     </LinearGradient>
   );
 }

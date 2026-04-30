@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
+    alignSelf: "center",
   },
   pokemonTypes: {
     fontSize: 20,
