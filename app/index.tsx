@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Pokemon } from "../src/types/tipos";
 import { fetchPokemon } from "../src/utils/fetcher";
-import Pokelist from "./components/pokelist";
+import Pokelist from "../src/components/pokelist";
 
 export default function Index() {
   const [pokemon, setPokemon] = useState<Pokemon[]>([]);

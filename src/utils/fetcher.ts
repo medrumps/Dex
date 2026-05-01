@@ -1,5 +1,5 @@
-import { Pokemon } from "../../src/types/tipos";
-import { pokemonCache } from "../cache";
+import { Pokemon } from "../types/tipos";
+import { pokemonCache } from "../services/cache";
 
 export async function fetchPokemon(
   setPokemon: React.Dispatch<React.SetStateAction<Pokemon[]>>,

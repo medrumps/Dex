@@ -1,30 +1,34 @@
 import { Stack } from "expo-router";
+import "../global.css";
+import { ThemeProvider } from "../src/context/themecontext";
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          headerTitle: "Pokédex",
-          headerStyle: { backgroundColor: "#e7e7e7" },
-          headerTitleStyle: { color: "#333", fontSize: 24 },
-          headerTitleAlign: "center",
-        }}
-      />
-      <Stack.Screen
-        name="screens/details"
-        options={{
-          headerTitle: "Details",
-          headerStyle: { backgroundColor: "#e7e7e7" },
-          headerTitleStyle: { color: "#333", fontSize: 24 },
-          headerTitleAlign: "center",
-          headerBackButtonDisplayMode: "minimal",
-          presentation: "formSheet",
-          sheetAllowedDetents: [0.75, 1],
-          sheetGrabberVisible: true,
-        }}
-      />
-    </Stack>
+    <ThemeProvider>
+      <Stack>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerTitle: "Pokédex",
+            headerStyle: { backgroundColor: "#e7e7e7" },
+            headerTitleStyle: { color: "#333", fontSize: 24 },
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="screens/details"
+          options={{
+            headerTitle: "Details",
+            headerStyle: { backgroundColor: "#e7e7e7" },
+            headerTitleStyle: { color: "#333", fontSize: 24 },
+            headerTitleAlign: "center",
+            headerBackButtonDisplayMode: "minimal",
+            presentation: "formSheet",
+            sheetAllowedDetents: [0.75, 1],
+            sheetGrabberVisible: true,
+          }}
+        />
+      </Stack>
+    </ThemeProvider>
   );
 }
