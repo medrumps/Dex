@@ -13,17 +13,14 @@ import {
 } from "react-native";
 import { useTheme } from "../context/themecontext";
 import { styles } from "../styles/components";
-import { Pokemon } from "../types/tipos";
-import { collectUniqueTypes, filterPokemonList } from "../utils/filterPokemon";
-import { capitalizeFirstLetter, getGradientColors } from "../utils/helpers";
-import { getPokemonGridLayout } from "../utils/pokemonGridLayout";
-
-interface PokelistProps {
-  pokemon: Pokemon[];
-  showName: boolean;
-  loading?: boolean;
-  error?: string | null;
-}
+import { PokelistProps } from "../types/tipos";
+import {
+  capitalizeFirstLetter,
+  collectUniqueTypes,
+  filterPokemonList,
+  getGradientColors,
+  getPokemonGridLayout,
+} from "../utils/helpers";
 
 const Pokelist: React.FC<PokelistProps> = ({
   pokemon,
@@ -64,30 +61,28 @@ const Pokelist: React.FC<PokelistProps> = ({
     );
 
   return (
-    <View className={styles.pageContainer}>
+    <View className={`flex-1 ${theme === 'dark' ? 'theme-dark' : 'theme-light'} ${styles.pageContainer}`}>
       <View className={styles.header}>
-        <View className="flex-row justify-between items-center mb-4">
-          <Text className={styles.title}>Pokédex</Text>
-          <TouchableOpacity
+        <View className="flex-row justify-between items-center mb-4 gap-2">
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Buscar por nome..."
+            placeholderTextColor="#888"
+            autoCapitalize="none"
+            className={`flex-1 ${styles.searchBar}`}
+          />
+          <TouchableOpacity 
             onPress={toggleTheme}
             className={styles.themeToggle}
           >
-            <Ionicons
-              name={theme === "light" ? "moon" : "sunny"}
-              size={20}
-              color={theme === "light" ? "#1e293b" : "#f8fafc"}
+            <Ionicons 
+              name={theme === "light" ? "moon" : "sunny"} 
+              size={20} 
+              color={theme === "light" ? "#1e293b" : "#f8fafc"} 
             />
           </TouchableOpacity>
         </View>
-
-        <TextInput
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholder="Buscar por nome..."
-          placeholderTextColor="#888"
-          autoCapitalize="none"
-          className={styles.searchBar}
-        />
 
         <ScrollView
           horizontal
