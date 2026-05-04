@@ -1,3 +1,4 @@
+import { buildTailwindColorClass } from "@/src/styles/typeColors";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import React from "react";
@@ -36,13 +37,15 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
                 className="w-[150px] h-[150px]"
               />
             </View>
-            <View className="mb-4">
-              <Text className="text-xl font-bold text-center">
+            <View className="mb-4 flex-row items-center gap-[10px]">
+              <Text className={buildTailwindColorClass(pokemon.mainType)}>
                 {capitalizeFirstLetter(pokemon.mainType)}
-                {pokemon.subType
-                  ? ` / ${capitalizeFirstLetter(pokemon.subType)}`
-                  : ""}
               </Text>
+              {pokemon.subType && (
+                <Text className={buildTailwindColorClass(pokemon.subType)}>
+                  / {capitalizeFirstLetter(pokemon.subType)}
+                </Text>
+              )}
             </View>
           </LinearGradient>
         </Link>
