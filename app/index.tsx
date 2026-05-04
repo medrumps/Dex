@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../global.css";
 import { Pokemon } from "../src/types/tipos";
 import { fetchPokemon } from "../src/utils/fetcher";
 import Pokelist from "./components/pokelist";

@@ -8,7 +8,7 @@ export default function RootLayout() {
         options={{
           headerTitle: "Pokédex",
           headerStyle: { backgroundColor: "#e7e7e7" },
-          headerTitleStyle: { color: "#333", fontSize: 24 },
+          headerTitleStyle: { color: "#333333", fontSize: 24 },
           headerTitleAlign: "center",
         }}
       />
@@ -17,7 +17,7 @@ export default function RootLayout() {
         options={{
           headerTitle: "Details",
           headerStyle: { backgroundColor: "#e7e7e7" },
-          headerTitleStyle: { color: "#333", fontSize: 24 },
+          headerTitleStyle: { color: "#333333", fontSize: 24 },
           headerTitleAlign: "center",
           headerBackButtonDisplayMode: "minimal",
           presentation: "formSheet",

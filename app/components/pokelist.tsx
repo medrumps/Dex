@@ -13,62 +13,35 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
   showName,
 }) => {
   return (
-    <ScrollView
-      contentContainerStyle={{
-        gap: 7,
-        padding: 20,
-        backgroundColor: "#e7e7e7",
-        alignItems: "center",
-      }}
-      className="gap-2 p-5 bg-gray-200 items-center"
-    >
+    <ScrollView contentContainerClassName="gap-4 py-4 px-8 place-items-center grid grid-cols-2">
       {pokemon.map((pokemon) => (
         <Link key={pokemon.name} href={`/screens/details?name=${pokemon.name}`}>
           <LinearGradient
             colors={getGradientColors(pokemon.mainType, pokemon.subType)}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            style={{ borderRadius: 20, opacity: 0.9 }}
-            className="items-center mt-[10px]"
+            className="rounded-[20px] opacity-90 items-center"
             key={pokemon.name}
           >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 30,
-                marginBottom: 20,
-              }}
-            >
+            <View>
               {showName && (
-                <Text className="text-[30px] font-bold mb-[10px] text-center w-full">
+                <Text className="text-2xl font-bold text-center mt-2">
                   {capitalizeFirstLetter(pokemon.name)}
                 </Text>
               )}
             </View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View className="flex items-center">
               <Image
                 source={{ uri: pokemon.image }}
-                style={{ width: 150, height: 150 }}
-              />
-              <Image
-                source={{ uri: pokemon.imageShiny }}
-                style={{ width: 150, height: 150 }}
+                className="w-[150px] h-[150px]"
               />
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 30,
-                marginBottom: 20,
-              }}
-            >
-              <Text className="text-[20px] font-bold text-center">
-                Tipo: {capitalizeFirstLetter(pokemon.mainType)} /{" "}
-                {pokemon.subType ? capitalizeFirstLetter(pokemon.subType) : ""}
+            <View className="mb-4">
+              <Text className="text-xl font-bold text-center">
+                {capitalizeFirstLetter(pokemon.mainType)}
+                {pokemon.subType
+                  ? ` / ${capitalizeFirstLetter(pokemon.subType)}`
+                  : ""}
               </Text>
             </View>
           </LinearGradient>
