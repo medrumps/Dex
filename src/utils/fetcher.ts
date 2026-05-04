@@ -26,7 +26,6 @@ export async function fetchPokemon(
     setPokemon(pokemonDetails);
     pokemonDetails.forEach((pokemon) => {
       pokemonCache[pokemon.name] = pokemon; // Cache the Pokémon data
-      console.log(`Fetched data for ${pokemon.name}`);
     });
   } catch (error) {
     console.error("Error fetching Pokémon data:", error);

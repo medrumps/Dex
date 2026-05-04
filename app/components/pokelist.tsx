@@ -14,19 +14,19 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
   showName,
 }) => {
   return (
-    <ScrollView contentContainerClassName="gap-4 py-4 px-8 place-items-center grid grid-cols-2">
+    <ScrollView contentContainerClassName="gap-4 py-4 px-0 place-items-center flex-row flex-wrap justify-center">
       {pokemon.map((pokemon) => (
         <Link key={pokemon.name} href={`/screens/details?name=${pokemon.name}`}>
           <LinearGradient
             colors={getGradientColors(pokemon.mainType, pokemon.subType)}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            className="rounded-[20px] opacity-90 items-center"
+            className="rounded-[20px] items-center"
             key={pokemon.name}
           >
             <View>
               {showName && (
-                <Text className="text-2xl font-bold text-center mt-2">
+                <Text className="text-2xl font-bold text-center mt-2 text-red-800">
                   {capitalizeFirstLetter(pokemon.name)}
                 </Text>
               )}

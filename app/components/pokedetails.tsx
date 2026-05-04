@@ -16,7 +16,7 @@ export const PokemonDetails: React.FC<PokemonDetailsProps> = ({ pokemon }) => {
       colors={getGradientColors(pokemon.mainType, pokemon.subType)}
       className="flex-1"
     >
-      <Text className="text-[30px] font-bold mb-[10px] text-center">
+      <Text className="text-[30px] font-bold mb-[10px] text-center text-white">
         {capitalizeFirstLetter(pokemon.name)}
       </Text>
     </LinearGradient>

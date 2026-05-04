@@ -47,5 +47,5 @@ export const buildTailwindColorClass = (
   if (useColor) {
     return `text-xl font-bold ${tailwindTypeColors[type ?? ""]}`;
   }
-  return "text-xl font-bold";
+  return "text-lg font-bold";
 };

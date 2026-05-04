@@ -1,4 +1,8 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { Stack } from "expo-router";
+import { cssInterop } from "nativewind";
+
+cssInterop(LinearGradient, { className: "style" });
 
 export default function RootLayout() {
   return (
