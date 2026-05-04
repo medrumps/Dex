@@ -5,6 +5,8 @@
     "start": "npm --prefix mobile start",
     "android": "npm --prefix mobile run android",
     "ios": "npm --prefix mobile run ios",
-    "web": "npm --prefix mobile run web"
+    "web": "npm --prefix mobile run web",
+    "lint": "npm --prefix mobile run lint",
+    "format": "npm --prefix mobile run format"
   }
 }
