@@ -1,11 +1,10 @@
-import { styles } from "@/src/styles/estilos";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Text } from "react-native";
 import { Pokemon } from "../../src/types/tipos";
 import {
-    capitalizeFirstLetter,
-    getGradientColors,
+  capitalizeFirstLetter,
+  getGradientColors,
 } from "../../src/utils/helpers";
 
 interface PokemonDetailsProps {
@@ -17,9 +16,11 @@ export const PokemonDetails: React.FC<PokemonDetailsProps> = ({ pokemon }) => {
       colors={getGradientColors(pokemon.mainType, pokemon.subType)}
       style={{ flex: 1 }}
     >
-      <Text style={styles.pokemonName}>
+      <Text className="text-[30px] font-bold mb-[10px] text-center">
         {capitalizeFirstLetter(pokemon.name)}
       </Text>
     </LinearGradient>
   );
 };
+
+export default PokemonDetails;

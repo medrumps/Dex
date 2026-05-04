@@ -5,7 +5,8 @@ import { PokemonDetails } from "../components/pokedetails";
 
 export default function Details() {
   const { name } = useLocalSearchParams();
-  const pokemonName = Array.isArray(name) ? name[0] : name;
+  const pokemonName = (Array.isArray(name) ? name[0] : name) ?? "";
+
 
   // Busca instantânea no objeto de cache, sem precisar de fetch/async
   const pokemon = pokemonCache[pokemonName];

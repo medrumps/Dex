@@ -2,7 +2,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
-import { styles } from "../../src/styles/estilos";
 import { Pokemon } from "../../src/types/tipos";
 import {
   capitalizeFirstLetter,
@@ -21,6 +20,7 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
         backgroundColor: "#e7e7e7",
         alignItems: "center",
       }}
+      className="gap-2 p-5 bg-gray-200 items-center"
     >
       {pokemon.map((pokemon) => (
         <Link key={pokemon.name} href={`/screens/details?name=${pokemon.name}`}>
@@ -28,15 +28,26 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
             colors={getGradientColors(pokemon.mainType, pokemon.subType)}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            style={[styles.container, { opacity: 0.9 }]} // Gradiente aqui
+            style={{ borderRadius: 20, opacity: 0.9 }}
+            className="items-center mt-[10px]"
             key={pokemon.name}
           >
-            {showName && (
-              <Text style={styles.pokemonName}>
-                {capitalizeFirstLetter(pokemon.name)}
-              </Text>
-            )}
-            <View style={styles.imageContainer}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 30,
+                marginBottom: 20,
+              }}
+            >
+              {showName && (
+                <Text className="text-[30px] font-bold mb-[10px] text-center w-full">
+                  {capitalizeFirstLetter(pokemon.name)}
+                </Text>
+              )}
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Image
                 source={{ uri: pokemon.image }}
                 style={{ width: 150, height: 150 }}
@@ -46,15 +57,19 @@ const Pokelist: React.FC<{ pokemon: Pokemon[]; showName: boolean }> = ({
                 style={{ width: 150, height: 150 }}
               />
             </View>
-            <View style={styles.typeContainer}>
-              <Text style={[styles.pokemonTypes]}>
-                Tipo: {capitalizeFirstLetter(pokemon.mainType)}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 30,
+                marginBottom: 20,
+              }}
+            >
+              <Text className="text-[20px] font-bold text-center">
+                Tipo: {capitalizeFirstLetter(pokemon.mainType)} /{" "}
+                {pokemon.subType ? capitalizeFirstLetter(pokemon.subType) : ""}
               </Text>
-              {pokemon.subType && (
-                <Text style={[styles.pokemonTypes]}>
-                  Subtipo: {capitalizeFirstLetter(pokemon.subType)}
-                </Text>
-              )}
             </View>
           </LinearGradient>
         </Link>
