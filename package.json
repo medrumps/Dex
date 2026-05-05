@@ -1,8 +1,8 @@
 {
   "name": "dex",
-  "main": "expo-router/entry",
-  "version": "1.0.0",
+  "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
@@ -49,4 +49,13 @@
     "typescript": "~5.9.2"
   },
   "private": true
+=======
+    "start": "npm --prefix mobile start",
+    "android": "npm --prefix mobile run android",
+    "ios": "npm --prefix mobile run ios",
+    "web": "npm --prefix mobile run web",
+    "lint": "npm --prefix mobile run lint",
+    "format": "npm --prefix mobile run format"
+  }
+>>>>>>> remotes/origin/CKM
 }

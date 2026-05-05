@@ -1,0 +1,11 @@
+download: 
+URL: https://developer.android.com/studio
+
+OS-ENV variables: 
+NAME: ANDROID_HOME
+VALUE: C:\Users\cleoc\AppData\Local\Android\Sdk
+
+OS-ENV path:
+C:\Users\cleoc\AppData\Local\Android\Sdk\platform-tools
+
+Setup virtual device on android studio > more options
